@@ -1,0 +1,42 @@
+{
+  "name": "on-the-beach",
+  "version": "1.0.0",
+  "description": "Technical Asssessment for front-end developer role",
+  "main": "index.js",
+  "repository": "https://github.com/jamesltfox/on-the-beach-technical.git",
+  "author": "James Fox",
+  "license": "MIT",
+  "scripts": {
+    "clean": "rm dist/bundle.js",
+    "build-dev": "webpack -d --mode development",
+    "build-prod": "webpack -p --mode production",
+    "start": "webpack-dev-server --hot --mode development"
+  },
+  "dependencies": {
+    "mini-css-extract-plugin": "^0.8.0",
+    "normalize-scss": "^7.0.1",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "react-hot-loader": "^4.12.14",
+    "webfontloader": "^1.6.28"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.2",
+    "@babel/preset-env": "^7.6.2",
+    "@babel/preset-react": "^7.0.0",
+    "autoprefixer": "^9.6.4",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.2.0",
+    "copy-webpack-plugin": "5.0.4",
+    "eslint": "^6.5.1",
+    "file-loader": "^4.2.0",
+    "node-sass": "^4.12.0",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.0",
+    "url-loader": "^2.2.0",
+    "webpack": "^4.41.0",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.8.2"
+  }
+}
