@@ -1,0 +1,57 @@
+ [
+    {
+      "id": 1245,
+      "name": "Iberostar Grand Salome",
+      "resort_image": "/images/hotel-image-1.png",
+      "url": "/holidays/iberostar-grand-salome",
+      "region": "Costa Adeje",
+      "country": "Tenerife",
+      "rating": 5,
+      "persons": {
+          "adults": 2,
+          "children": 2,
+          "infants": 1
+      },
+      "departure_date": 1562112000,
+      "departure_location": "East Midlands",
+      "no_of_days": 7,
+      "price": 1136.5,
+      "overview": "The iberostar Grand Salome has an exceptional location in the south of Tenerife, overlooking the Atlantic Ocean. It is situated between the Gulf del Sur and rthe Amarillo Golf courses, and is an ideal hotrl for families, couples and groups who are looking for a holiday full of sport, sun and sea."
+    },
+    {
+      "id": 1246,
+      "name": "Aguamarina Golf Hotel",
+      "resort_image": "/images/hotel-image-2.png",
+      "url": "/holidays/aguamarina-golf-hotel",
+      "region": "Costa Adeje",
+      "country": "Tenerife",
+      "rating": 4,
+      "persons": {
+          "adults": 2,
+          "children": 1
+      },
+      "departure_date": 1558915200,
+      "departure_location": "Liverpool",
+      "no_of_days": 7,
+      "price": 696.8,
+      "overview": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+      "id": 1247,
+      "name": "Las Piramides Resort",
+      "resort_image": "/images/hotel-image-3.png",
+      "url": "/holidays/aguamarina-golf-hotel",
+      "region": "Costa Adeje",
+      "country": "Tenerife",
+      "rating": 3,
+      "persons": {
+          "adults": 2,
+          "children": 2
+      },
+      "departure_date": 1562112000,
+      "departure_location": "Manchester",
+      "no_of_days": 7,
+      "price": 499.99,
+      "overview": "Duis tristique sollicitudin nibh sit amet. Dictum fusce ut placerat orci. Tempus urna et pharetra pharetra massa massa. Diam sit amet nisl suscipit adipiscing bibendum est ultricies integer. Nulla pharetra diam sit amet nisl. Posuere morbi leo urna molestie at elementum eu facilisis sed."
+    }
+]
