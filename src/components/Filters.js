@@ -2,6 +2,7 @@ import React from 'react';
 import Alphabetical from './Filters/Alphabetical';
 import Price from './Filters/Price';
 import Stars from './Filters/Stars';
+import Airport from './Filters/Airport';
 
 function Filters(props) {
 
@@ -15,11 +16,16 @@ function Filters(props) {
     return classes;
   }
 
+  const setAirport = (v) => {
+    props.onAirportChange(v);
+  }
+
   return (
     <aside className={setClasses()}>
       <Alphabetical alphabetOrder={props.activeCharOrder} changeFilter={setFilter} />
       <Price priceOrder={props.activePriceOrder} changeFilter={setFilter} />
       <Stars starOrder={props.activeStarOrder} changeFilter={setFilter} />
+      <Airport changeAirport={setAirport} airportList={props.airports} />
     </aside>
   );
 

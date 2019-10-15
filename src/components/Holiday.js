@@ -28,7 +28,6 @@ function Holiday(props) {
 
   const expanding = (val) => {
     setActiveOver(val);
-  
   }
 
   // Image Component

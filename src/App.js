@@ -4,12 +4,19 @@ import holidays from './holidays.json';
 import HolidaysList from './components/HolidaysList';
 
 function App() {
+  // Initial active filter and holidays
   const [activeFilter, setActiveFilter] = useState('price');
   const [allHolidays, setAllHolidays] = useState(holidays);
+  
+  //Ordering
   const [charOrder, setCharOrder] = useState('DESC');
   const [priceOrder, setPriceOrder] = useState('DESC');
   const [starOrder, setStarOrder] = useState('DESC');
+  
+  const [airports, setAirport] = useState('');
+  const [selectAir, setSelectAir] = useState('');
 
+  // Perform alphabetical sort 
   const alphabeticalChange = () => {
     
     let alphaOrder = [].concat(allHolidays);   
@@ -31,6 +38,7 @@ function App() {
     
   }
 
+  // Perform Price sort
   const priceChange = () => {
     let price = [].concat(allHolidays);
 
@@ -45,6 +53,7 @@ function App() {
     setAllHolidays(price);
   }
 
+    // Perform Star sort
   const starsChange = () => {
     let stars = [].concat(allHolidays);
 
@@ -59,7 +68,24 @@ function App() {
     setAllHolidays(stars);
   }
 
+  const extractAirports = () => {
+    let airportsNew = [];
+    let airports = [].concat(allHolidays);
+    
+    for (const airport of airports) {
+      airportsNew.push(airport.departure_location);
+    }
+
+    // ensure all records are unique
+    let airportsUnique = airportsNew.filter((v, i, a) => a.indexOf(v) === i);
+ 
+    setAirport(airportsUnique);
+  }
+
   useEffect(() => {
+
+    extractAirports();
+
     switch(activeFilter) {
       case 'alphabetically':
         alphabeticalChange();
@@ -74,7 +100,7 @@ function App() {
       break;
 
     }
-  }, [activeFilter, charOrder, priceOrder, starOrder]);
+  }, [activeFilter, charOrder, priceOrder, starOrder, selectAir]);
 
   const changeFilter = (e, v) => {  
     
@@ -95,9 +121,13 @@ function App() {
     setActiveFilter(e);
   }
 
+  const changeAirport = (val) => {
+    setSelectAir(val);
+  }
+
   return (
     <div className="holiday-search">
-        <Filters onFilterChange={changeFilter} activeFilter={activeFilter} activeCharOrder={charOrder} activePriceOrder={priceOrder} activeStarOrder={starOrder} />
+        <Filters airports={airports} onAirportChange={changeAirport} onFilterChange={changeFilter} activeFilter={activeFilter} activeCharOrder={charOrder} activePriceOrder={priceOrder} activeStarOrder={starOrder} />
         <HolidaysList filter={activeFilter} holidays={allHolidays} />
     </div>
   );

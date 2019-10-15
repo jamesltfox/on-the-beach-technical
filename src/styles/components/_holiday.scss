@@ -2,6 +2,7 @@
   $self: &;
   background-color: color("holiday");
   margin-bottom: spacing(3);
+  overflow: hidden;
 
   &__inner {
     @include mappy-bp(medium) {
@@ -98,8 +99,9 @@
   // Overview 
 
   &__overview {
-    height: 0;
+    max-height: 0;
     overflow: hidden;
+    transition: all 0.5s ease-in-out;
 
     h3 {
       color: color();
@@ -116,9 +118,9 @@
   &.expanded {
 
     #{ $self }__overview {
-      height: auto;
+      max-height: 500px;
       padding: spacing(2);
-      transition: height 0.5s ease-in-out;
+      transition: all 0.5s ease-in-out;
     }
   }
 
