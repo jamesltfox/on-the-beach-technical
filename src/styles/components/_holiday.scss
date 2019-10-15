@@ -1,0 +1,115 @@
+.holiday {
+  $self: &;
+  background-color: color("holiday");
+  margin-bottom: spacing(3);
+
+  &__inner {
+    @include mappy-bp(medium) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 24rem;
+
+    @include mappy-bp(medium) {
+      flex: 1 0 32rem;
+    }
+  }
+
+  &__name {
+    padding: spacing(2);
+
+    @include mappy-bp(medium) {
+      flex: 0 0 40%;
+      padding: 2rem;
+    }
+
+    @include mappy-bp(large) {
+      flex: 0 0 32.8rem;
+    }
+  }
+
+  &__placename {
+    color: color();
+   
+  }
+
+  &__location {
+    color: color("subtitle");
+    font-size: fs(0);
+    font-weight: 300;
+    margin: spacing() 0;
+  }
+
+  // More tab
+  &__more {
+    align-self: flex-start;
+    background-color: color("holiday");
+    color: color();
+    cursor: pointer;
+    display: block;
+    font-size: fs();
+    margin-bottom: -1px;
+    padding: spacing(1) spacing(2);
+
+    @include mappy-bp(standard) {
+      margin-bottom: 0;
+    }
+
+    span {
+      font-weight: bold;
+    }
+  }
+
+  &__family {
+    margin: spacing(2) 0;
+
+    p {
+      font-size: fs(5);
+      margin-bottom: 0;
+      margin-top: 0.75rem;
+    }
+
+    #{ $self }__num {
+      font-weight: 700;
+    } 
+  }
+
+  &__time {
+    span {
+      font-weight: 700;
+    }
+  }
+
+  &__depart {
+    span {
+      font-weight: 700;
+    }
+  }
+
+  // Overview 
+
+  &__overview {
+    height: 0;
+    overflow: hidden;
+
+    h3 {
+      color: color();
+    }
+
+    p {
+      font-size: fs(0);
+      line-height: 1.4;
+    }
+  }
+
+
+}

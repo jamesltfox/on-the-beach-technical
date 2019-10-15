@@ -1,0 +1,20 @@
+@use "sass:map";
+@import 'node_modules/normalize-scss/sass/normalize';
+@include normalize();
+
+@import 'node_modules/mappy-breakpoints/mappy-breakpoints';
+@import './styles/general/queries';
+@import './styles/general/setup';
+@import './styles/general/colors';
+@import './styles/general/spacing';
+@import './styles/general/typography';
+@import './styles/general/button';
+
+
+// Components
+
+@import './styles/components/holiday-search';
+@import './styles/components/filters';
+@import './styles/components/holiday-list';
+@import './styles/components/holiday';
+@import './styles/components/rater';

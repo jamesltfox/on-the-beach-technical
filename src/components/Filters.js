@@ -9,12 +9,18 @@ function Filters(props) {
     props.onFilterChange(e, v);
   }
 
+  const setClasses = () => {
+    let classes = "filters ";
+    classes += props.activeFilter;
+    return classes;
+  }
+
   return (
-    <div className="filters">
+    <aside className={setClasses()}>
       <Alphabetical alphabetOrder={props.activeCharOrder} changeFilter={setFilter} />
       <Price priceOrder={props.activePriceOrder} changeFilter={setFilter} />
       <Stars starOrder={props.activeStarOrder} changeFilter={setFilter} />
-    </div>
+    </aside>
   );
 
 }

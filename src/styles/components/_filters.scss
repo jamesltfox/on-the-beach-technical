@@ -1,0 +1,30 @@
+.filters {
+  flex: 0 0 25rem;
+  margin-bottom: spacing(3);
+
+  @include mappy-bp(standard) {
+    margin-right: spacing(4);
+  }
+
+
+  &.alphabetically {
+    .btn:first-of-type {
+      background-color: color();
+      color: color("textAlt");
+    }
+  }
+
+  &.price {
+    .btn:nth-child(2) {
+      background-color: color();
+      color: color("textAlt");
+    }
+  }
+
+  &.stars {
+    .btn:last-of-type {
+      background-color: color();
+      color: color("textAlt");
+    }
+  }
+}

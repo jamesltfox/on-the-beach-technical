@@ -12,7 +12,7 @@ function Alphabetical(props) {
   }
 
   return (
-    <a onClick={changeSort} className="filter__link">sort <span>alphabetically</span></a>
+    <a onClick={changeSort} className="btn btn__filter">sort <span>alphabetically</span></a>
   );
 
 }

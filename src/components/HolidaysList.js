@@ -13,9 +13,9 @@ function HolidaysList(props) {
   }
 
   return (
-    <div className="holiday-list">
+    <section className="holiday-list">
         { holidayListings }
-    </div>
+    </section>
   )
 
 }

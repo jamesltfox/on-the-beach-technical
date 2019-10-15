@@ -1,0 +1,11 @@
+$spacing: (
+  1: 1rem,
+  2: 1.5rem,
+  3: 3rem,
+  4: 5rem,
+  5: 6.5rem
+);
+
+@function spacing($key: 1) {
+  @return map-get($spacing, $key);
+}

@@ -1,0 +1,49 @@
+.btn {
+  $self: &;
+
+  display: block;
+  font-size: fs();
+  padding: spacing(2);
+
+  &__filter {
+    background-color: color("filter");
+    color: color();
+    cursor: pointer;
+
+    &:not(:last-of-type) {
+      border-bottom: 1px solid color();
+    }
+
+    &:hover {
+      background-color: color();
+      color: color("textAlt");
+    }
+
+    span {
+      font-weight: bold;
+    }
+  }
+
+  &__message {
+    font-size: fs(0);
+    margin-bottom: 0.5rem;
+  }
+
+  &__price {
+    font-size: fs(3);
+    font-weight: 700;
+  }
+
+  &--book {
+    background-color: color("secondary");
+    border-radius: 0.5rem;
+    color: color();
+    text-align: center;
+    text-decoration: none;
+
+    span {
+      display: block;
+    }
+  }
+
+}

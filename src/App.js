@@ -4,7 +4,7 @@ import holidays from './holidays.json';
 import HolidaysList from './components/HolidaysList';
 
 function App() {
-  const [activeFilter, setActiveFilter] = useState('');
+  const [activeFilter, setActiveFilter] = useState('price');
   const [allHolidays, setAllHolidays] = useState(holidays);
   const [charOrder, setCharOrder] = useState('DESC');
   const [priceOrder, setPriceOrder] = useState('DESC');

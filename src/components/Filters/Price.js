@@ -11,7 +11,7 @@ function Price(props) {
   }
 
   return (
-    <a onClick={changeSort} className="filter__link">sort by <span>price</span></a>
+    <a onClick={changeSort} className="btn btn__filter">sort by <span>price</span></a>
   );
 
 }

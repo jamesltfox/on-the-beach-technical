@@ -1,0 +1,17 @@
+.holiday-search {
+  $self: &;
+  margin: 0 auto;
+  max-width: 125rem;
+  padding: spacing(2);
+
+  @include mappy-bp(medium) {
+    padding: spacing(4);
+  }
+
+  @include mappy-bp(standard) {
+    display: flex;
+    flex-wrap: wrap;
+    padding: spacing(5);
+  }
+
+}

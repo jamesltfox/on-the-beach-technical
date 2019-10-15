@@ -1,0 +1,13 @@
+$themeColors: (
+  "primary": #17317f,
+  "secondary": #fedc07,
+  "holiday": #fff,
+  "text": #333,
+  "textAlt": #fff,
+  "subtitle": #a9a9a9,
+  "filter": #fff
+);
+
+@function color($key: "primary") {
+  @return map-get($themeColors, $key);
+}
