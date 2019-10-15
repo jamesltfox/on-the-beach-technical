@@ -3,7 +3,11 @@ import React from 'react';
 function Stars(props) {
 
   function changeSort() {
-    props.changeFilter('stars');
+    if (props.starOrder == 'DESC') {
+      props.changeFilter('stars', 'ASC');
+    } else if (props.starOrder == 'ASC') {
+      props.changeFilter('stars', 'DESC');
+    }
   }
 
   return (

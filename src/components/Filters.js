@@ -5,15 +5,15 @@ import Stars from './Filters/Stars';
 
 function Filters(props) {
 
-  const setFilter = (e) => {
-    props.onFilterChange(e);
+  const setFilter = (e, v) => {
+    props.onFilterChange(e, v);
   }
 
   return (
     <div className="filters">
-      <Alphabetical changeFilter={setFilter} />
-      <Price changeFilter={setFilter} />
-      <Stars changeFilter={setFilter} />
+      <Alphabetical alphabetOrder={props.activeCharOrder} changeFilter={setFilter} />
+      <Price priceOrder={props.activePriceOrder} changeFilter={setFilter} />
+      <Stars starOrder={props.activeStarOrder} changeFilter={setFilter} />
     </div>
   );
 

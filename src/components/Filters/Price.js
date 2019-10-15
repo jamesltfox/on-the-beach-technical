@@ -3,7 +3,11 @@ import React from 'react';
 function Price(props) {
 
   function changeSort() {
-    props.changeFilter('price');
+    if (props.priceOrder == 'DESC') {
+      props.changeFilter('price', 'ASC');
+    } else if (props.priceOrder == 'ASC') {
+      props.changeFilter('price', 'DESC');
+    }
   }
 
   return (

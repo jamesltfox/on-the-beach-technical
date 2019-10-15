@@ -3,7 +3,12 @@ import React from 'react';
 function Alphabetical(props) {
 
   function changeSort() {
-    props.changeFilter('alphabetical');
+  
+    if (props.alphabetOrder == 'DESC') {
+      props.changeFilter('alphabetically', 'ASC');
+    } else if (props.alphabetOrder == 'ASC') {
+      props.changeFilter('alphabetically', 'DESC');
+    }
   }
 
   return (
