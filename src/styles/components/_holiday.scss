@@ -111,5 +111,16 @@
     }
   }
 
+  // Expanding
+
+  &.expanded {
+
+    #{ $self }__overview {
+      height: auto;
+      padding: spacing(2);
+      transition: height 0.5s ease-in-out;
+    }
+  }
+
 
 }

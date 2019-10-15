@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Image from './HolidayElements/Image';
 import Title from './HolidayElements/Title';
 import Info from './HolidayElements/Info';
@@ -7,6 +7,29 @@ import Stars from './HolidayElements/Stars';
 import Button from './Button';
 
 function Holiday(props) {
+  const singleHol = useRef(null);
+  const [activeOver, setActiveOver] = useState('hidden');
+
+  useEffect(() => {
+
+    switch(activeOver) {
+
+      case 'hidden':
+          singleHol.current.classList.remove("expanded");  
+      break;
+
+      case 'expanded':
+          singleHol.current.classList.add("expanded");          
+      break;
+
+    }
+
+  }, [activeOver]);
+
+  const expanding = (val) => {
+    setActiveOver(val);
+  
+  }
 
   // Image Component
   const imageUrl = props.details.resort_image;
@@ -39,10 +62,11 @@ function Holiday(props) {
     showOverview = <Overview details={overview} />
   }
 
+
   return (
-      <div className="holiday">
+      <div className="holiday" ref={singleHol}>
         <div className="holiday__inner">
-            <Image url={imageUrl} />
+            <Image position={activeOver} onExpand={expanding} url={imageUrl} />
             <div className="holiday__name">
               <Title name={name} region={region} country={country} />
               <Stars rating={stars} />
