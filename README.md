@@ -1,6 +1,6 @@
 # On the Beach Technical Assessment
 
-This is a small React application for users to filter through holiday packages. The folloing features are available
+This is a small React application for users to filter through holiday packages. The following features are available
 
 1. Sort Holidays Alphabetically
 2. Sort by Price
