@@ -3,6 +3,7 @@ import Alphabetical from './Filters/Alphabetical';
 import Price from './Filters/Price';
 import Stars from './Filters/Stars';
 import Airport from './Filters/Airport';
+import Flights from './Filters/Flights';
 
 function Filters(props) {
 
@@ -25,6 +26,7 @@ function Filters(props) {
       <Alphabetical alphabetOrder={props.activeCharOrder} changeFilter={setFilter} />
       <Price priceOrder={props.activePriceOrder} changeFilter={setFilter} />
       <Stars starOrder={props.activeStarOrder} changeFilter={setFilter} />
+      <Flights startDate={props.startDate} endDate={props.endDate} onStartChange={props.onStartChange} onEndChange={props.onEndChange} />
       <Airport currentAirport={props.currentAirport} changeAirport={setAirport} airportList={props.airports} />
     </aside>
   );

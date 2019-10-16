@@ -12,10 +12,24 @@
     }
   }
 
+  label {
+    display: block;
+    margin-bottom: spacing();
+  }
+
   input,
   select {
     font-size: fs();
     padding: spacing();
+  }
+
+  &__dates {
+    color: color();
+    font-size: fs();
+
+    &:not(:last-of-type) {
+      margin-bottom: spacing(2);
+    }
   }
 
 }

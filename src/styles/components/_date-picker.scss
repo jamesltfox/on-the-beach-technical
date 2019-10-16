@@ -1,0 +1,10 @@
+.react-datepicker {
+  $self: &;
+
+  &__current-month,
+  &__day-name,
+  &__day {
+    font-size: fs();
+  }
+
+}
