@@ -2,8 +2,7 @@ import React, {useState} from 'react';
 
 function Departures(props) {
 
-  const [selectVal, setSelectVal] = useState('all');
-  let airports;
+let airports;
 
  if (props.airports.length > 0) {
    airports = props.airports.map((v, a) => {
@@ -17,7 +16,7 @@ function Departures(props) {
 
   return (
     <form>
-      <select onChange={changeAirport} value={selectVal}>
+      <select onChange={changeAirport} value={props.currentAirport}>
         <option value="all">All Airports</option>
           {airports}    
       </select>

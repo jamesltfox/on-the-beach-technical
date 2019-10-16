@@ -6,7 +6,7 @@ function Airport(props) {
   return(
     <section className="selector">
       <p>Select departure <span>airport</span></p>
-      <Departures selectedAirport={props.changeAirport} airports={props.airportList} />
+      <Departures currentAirport={props.currentAirport} selectedAirport={props.changeAirport} airports={props.airportList} />
     </section>
   );
 

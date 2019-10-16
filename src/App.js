@@ -1,12 +1,25 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import Filters from './components/Filters';
 import holidays from './holidays.json';
 import HolidaysList from './components/HolidaysList';
+
+function skipFirstEffect(fn, arr) {
+  const first = useRef(true);
+
+  useEffect(() => {
+    if (first.current) {
+      first.current = false;
+      return;
+    }
+    fn();
+  }, arr)
+}
 
 function App() {
   // Initial active filter and holidays
   const [activeFilter, setActiveFilter] = useState('price');
   const [allHolidays, setAllHolidays] = useState(holidays);
+  const [resetHolidays, setResetHolidays] = useState(holidays);
   
   //Ordering
   const [charOrder, setCharOrder] = useState('DESC');
@@ -14,12 +27,54 @@ function App() {
   const [starOrder, setStarOrder] = useState('DESC');
   
   const [airports, setAirport] = useState('');
-  const [selectAir, setSelectAir] = useState('');
+  const [selectAir, setSelectAir] = useState('all');
+
+  // Alphabetic, Price, Stars effects
+  useEffect(() => {
+
+    extractAirports();
+
+    switch(activeFilter) {
+      case 'alphabetically':
+        alphabeticalChange();
+        break;
+
+      case 'price':
+        priceChange();
+        break;
+
+      case 'stars':
+        starsChange();
+      break;
+    }
+  }, [activeFilter, charOrder, priceOrder, starOrder]);
+
+  // Departure airport effects
+  skipFirstEffect(() => {
+    setAllHolidays(resetHolidays);
+    showAirport();
+  }, [selectAir]);
+
+
+  const showAirport = () => {
+     let holidays = [].concat(resetHolidays);
+
+     if (selectAir == 'all') {
+        setAllHolidays(resetHolidays);
+     } else {
+       let result = holidays.filter(obj => {
+        return obj.departure_location === selectAir;
+       });
+  
+       setAllHolidays(result);
+     }
+
+  };
 
   // Perform alphabetical sort 
   const alphabeticalChange = () => {
     
-    let alphaOrder = [].concat(allHolidays);   
+    let alphaOrder = [].concat(resetHolidays);   
     
       alphaOrder.sort((a, b) => {
         if (charOrder == 'DESC') {
@@ -40,7 +95,7 @@ function App() {
 
   // Perform Price sort
   const priceChange = () => {
-    let price = [].concat(allHolidays);
+    let price = [].concat(resetHolidays);
 
       price.sort((a, b) => {
         if (priceOrder == 'ASC') {
@@ -55,7 +110,7 @@ function App() {
 
     // Perform Star sort
   const starsChange = () => {
-    let stars = [].concat(allHolidays);
+    let stars = [].concat(resetHolidays);
 
       stars.sort((a, b) => {
         if (starOrder == 'ASC') {
@@ -78,29 +133,8 @@ function App() {
 
     // ensure all records are unique
     let airportsUnique = airportsNew.filter((v, i, a) => a.indexOf(v) === i);
- 
     setAirport(airportsUnique);
   }
-
-  useEffect(() => {
-
-    extractAirports();
-
-    switch(activeFilter) {
-      case 'alphabetically':
-        alphabeticalChange();
-        break;
-
-      case 'price':
-        priceChange();
-        break;
-
-      case 'stars':
-        starsChange();
-      break;
-
-    }
-  }, [activeFilter, charOrder, priceOrder, starOrder, selectAir]);
 
   const changeFilter = (e, v) => {  
     
@@ -123,11 +157,12 @@ function App() {
 
   const changeAirport = (val) => {
     setSelectAir(val);
+
   }
 
   return (
     <div className="holiday-search">
-        <Filters airports={airports} onAirportChange={changeAirport} onFilterChange={changeFilter} activeFilter={activeFilter} activeCharOrder={charOrder} activePriceOrder={priceOrder} activeStarOrder={starOrder} />
+        <Filters currentAirport={selectAir} airports={airports} onAirportChange={changeAirport} onFilterChange={changeFilter} activeFilter={activeFilter} activeCharOrder={charOrder} activePriceOrder={priceOrder} activeStarOrder={starOrder} />
         <HolidaysList filter={activeFilter} holidays={allHolidays} />
     </div>
   );

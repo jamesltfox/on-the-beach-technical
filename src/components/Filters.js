@@ -25,7 +25,7 @@ function Filters(props) {
       <Alphabetical alphabetOrder={props.activeCharOrder} changeFilter={setFilter} />
       <Price priceOrder={props.activePriceOrder} changeFilter={setFilter} />
       <Stars starOrder={props.activeStarOrder} changeFilter={setFilter} />
-      <Airport changeAirport={setAirport} airportList={props.airports} />
+      <Airport currentAirport={props.currentAirport} changeAirport={setAirport} airportList={props.airports} />
     </aside>
   );
 
