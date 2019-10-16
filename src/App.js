@@ -102,7 +102,13 @@ function App() {
   // Perform alphabetical sort 
   const alphabeticalChange = () => {
     
-    let alphaOrder = [].concat(resetHolidays);   
+    let alphaOrder;  
+    
+    if (selectAir !== 'all' || endDate) {
+      alphaOrder = [].concat(allHolidays);
+    } else {
+      alphaOrder = [].concat(resetHolidays);
+    }
     
       alphaOrder.sort((a, b) => {
         if (charOrder == 'DESC') {
@@ -122,30 +128,42 @@ function App() {
 
   // Perform Price sort
   const priceChange = () => {
-    let price = [].concat(resetHolidays);
+    let price;
 
-      price.sort((a, b) => {
-        if (priceOrder == 'ASC') {
-          return a.price - b.price;
-        } else if (priceOrder == 'DESC') {
-          return b.price - a.price;
-        }
-      }); 
+    if (selectAir !== 'all' || endDate) {
+      price = [].concat(allHolidays);
+    } else {
+      price = [].concat(resetHolidays);
+    }
+
+    price.sort((a, b) => {
+      if (priceOrder == 'ASC') {
+        return a.price - b.price;
+      } else if (priceOrder == 'DESC') {
+        return b.price - a.price;
+      }
+    }); 
 
     setAllHolidays(price);
   }
 
     // Perform Star sort
   const starsChange = () => {
-    let stars = [].concat(resetHolidays);
+    let stars;
 
-      stars.sort((a, b) => {
-        if (starOrder == 'ASC') {
-          return a.rating - b.rating;
-        } else if (starOrder == 'DESC') {
-          return b.rating - a.rating;
-        }
-      });
+    if (selectAir !== 'all' || endDate) {
+      stars = [].concat(allHolidays);
+    } else {
+      stars = [].concat(resetHolidays);
+    }
+    
+    stars.sort((a, b) => {
+      if (starOrder == 'ASC') {
+        return a.rating - b.rating;
+      } else if (starOrder == 'DESC') {
+        return b.rating - a.rating;
+      }
+    });
 
     setAllHolidays(stars);
   }

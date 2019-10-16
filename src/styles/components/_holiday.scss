@@ -56,7 +56,8 @@
     background-color: color("holiday");
     color: color();
     cursor: pointer;
-    display: block;
+    display: flex;
+    flex-wrap: wrap;
     font-size: fs();
     margin-bottom: -1px;
     padding: spacing(1) spacing(2);
@@ -67,6 +68,28 @@
 
     span {
       font-weight: bold;
+    }
+
+    span:first-of-type {
+      margin-right: 0.3rem;
+    }
+  }
+
+  &__arrow {
+    display: block;
+    height: 2rem;
+    margin-left: spacing(2);
+    transform: rotate(-90deg);
+    transition: transform 0.5s ease-in-out;
+    width: 2rem;
+
+    svg {
+      height: 100%;
+      width: 100%;
+    }
+
+    path {
+      stroke: color();
     }
   }
 
@@ -101,27 +124,64 @@
   &__overview {
     max-height: 0;
     overflow: hidden;
+   
     transition: all 0.5s ease-in-out;
 
     h3 {
       color: color();
+      opacity: 0;
     }
 
     p {
       font-size: fs(0);
       line-height: 1.4;
+      opacity: 0;
+    }
+
+    h3,
+    p {
+      transition: opacity 0.3s ease-out;
     }
   }
 
   // Expanding
 
   &.expanded {
+    overflow: visible;
 
-    #{ $self }__overview {
-      max-height: 500px;
-      padding: spacing(2);
+    #{ $self }__overview.enter-active {
+      max-height: 150px;
+      overflow: visible;
+      padding: 2rem;
       transition: all 0.5s ease-in-out;
+
+      h3,
+      p {
+        opacity: 1;
+        transition: opacity 0.5s ease-in;
+        transition-delay: 0.2s;
+      }
     }
+    
+    #{ $self }__overview.enter-done {
+      max-height: 150px;
+      overflow: visible;
+      padding: 2rem;
+
+      h3,
+      p {
+        opacity: 1;
+        transition: opacity 0.5s ease-in;
+        transition-delay: 0.2s;
+      }
+    }
+
+
+    #{ $self }__arrow {
+      transform: rotate(0);
+      transition: transform 0.5s ease-in-out;
+    }
+
   }
 
 

@@ -7,4 +7,21 @@
     font-size: fs();
   }
 
+  &__day {
+    width: 3.7rem;
+  }
+
+   &__day-name {
+     padding: 1rem;
+   }
+
+   &__header {
+     padding: 1rem 3rem 0 1rem;
+   }
+
+   &__input-container {
+     input {
+       border: 1px solid color("subtitle");
+     }
+   }
 }

@@ -40,7 +40,7 @@
       "id": 1247,
       "name": "Las Piramides Resort",
       "resort_image": "/images/hotel-image-3.png",
-      "url": "/holidays/aguamarina-golf-hotel",
+      "url": "/holidays/las-piramides-resort",
       "region": "Costa Adeje",
       "country": "Tenerife",
       "rating": 3,
@@ -53,6 +53,23 @@
       "no_of_days": 7,
       "price": 499.99,
       "overview": "Duis tristique sollicitudin nibh sit amet. Dictum fusce ut placerat orci. Tempus urna et pharetra pharetra massa massa. Diam sit amet nisl suscipit adipiscing bibendum est ultricies integer. Nulla pharetra diam sit amet nisl. Posuere morbi leo urna molestie at elementum eu facilisis sed."
+    },
+    {
+      "id": 1248,
+      "name": "Las Piramides Apartment",
+      "resort_image": "/images/hotel-image-2.png",
+      "url": "/holidays/aguamarina-golf-hotel",
+      "region": "Costa Adeje",
+      "country": "Tenerife",
+      "rating": 4,
+      "persons": {
+          "adults": 2,
+          "children": 2
+      },
+      "departure_date": 1562112000,
+      "departure_location": "Manchester",
+      "no_of_days": 7,
+      "price": 799.99,
+      "overview": "Duis tristique sollicitudin nibh sit amet. Dictum fusce ut placerat orci. Tempus urna et pharetra pharetra massa massa. Diam sit amet nisl suscipit adipiscing bibendum est ultricies integer. Nulla pharetra diam sit amet nisl. Posuere morbi leo urna molestie at elementum eu facilisis sed."
     }
-    
 ]

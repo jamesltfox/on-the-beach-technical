@@ -3,6 +3,10 @@
   margin-top: spacing(2);
   padding: spacing();
 
+  @include mappy-bp(standard) {
+    padding: spacing(2);
+  }
+
   p {
     color: color();
     margin-top: 0;

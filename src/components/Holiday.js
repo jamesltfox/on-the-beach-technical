@@ -5,10 +5,12 @@ import Info from './HolidayElements/Info';
 import Overview from './HolidayElements/Overview';
 import Stars from './HolidayElements/Stars';
 import Button from './Button';
+import { CSSTransition } from 'react-transition-group';
 
 function Holiday(props) {
   const singleHol = useRef(null);
   const [activeOver, setActiveOver] = useState('hidden');
+  const [opened, setOpened] = useState(false);
 
   useEffect(() => {
 
@@ -26,8 +28,9 @@ function Holiday(props) {
 
   }, [activeOver]);
 
-  const expanding = (val) => {
-    setActiveOver(val);
+  const expanding = (cls, v) => {
+    setActiveOver(cls);
+    setOpened(v);
   }
 
   // Image Component
@@ -58,7 +61,7 @@ function Holiday(props) {
   let showOverview;
 
   if (overview) {
-    showOverview = <Overview details={overview} />
+    showOverview = <CSSTransition in={opened} timeout={200} className="holiday-container"><Overview details={overview} /></CSSTransition>
   }
 
 

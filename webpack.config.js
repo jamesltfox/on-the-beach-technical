@@ -34,7 +34,7 @@ const config = {
         ]
       },
       {
-        test: /\.(png|jpg|gif|svg)$/,
+        test: /\.(png|jpg|gif)$/,
         use: [
           {
             loader: 'file-loader',
@@ -44,7 +44,20 @@ const config = {
             }
           }
         ]
-      }
+      },
+      {
+        test: /\.svg$/,
+        use: [{
+          loader: '@svgr/webpack',
+          options: {
+            svgoConfig: {
+              plugins: {
+                removeViewBox: false
+              }
+            }
+          }
+        }],
+      },
     ]
   },
   resolve: {
@@ -57,10 +70,9 @@ const config = {
     new MiniCssExtractPlugin({
       filename: "style.css"
     }),
-    new CopyPlugin([{
-      from:'./src/images',
-      to: path.resolve(__dirname, 'dist') + '/images'
-    }])
+    new CopyPlugin([
+      {from:'./src/images', to: path.resolve(__dirname, 'dist') + '/images'},
+    ])
   ],
   
   devServer: {
