@@ -19,7 +19,7 @@ This is a small React application for users to filter through holiday packages. 
 
 ## Features
 
-The alphabetical, price and star ratings will toggle between Ascending and Descending values when clicking on the relavant menu item.
+The alphabetical, price and star ratings will toggle between Ascending and Descending values when clicking on the relevant menu item.
 
 If a departure date or particular airport is selected the 3 sorting features will only filter on the available records otherwise the filters will work across the complete data 
 
