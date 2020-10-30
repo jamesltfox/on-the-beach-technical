@@ -3907,8 +3907,8 @@ nice-try@^1.0.4:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/nice-try/-/nice-try-1.0.5.tgz#a3378a7696ce7d223e88fc9b764bd7ef1089e366"
 
-node-forge@0.9.0:
-  version "0.9.0"
+node-forge@^0.10.0:
+  version "0.10.0"
   resolved "https://registry.yarnpkg.com/node-forge/-/node-forge-0.9.0.tgz#d624050edbb44874adca12bb9a52ec63cb782579"
 
 node-gyp@^3.8.0:
@@ -6149,8 +6149,8 @@ yallist@^3.0.0, yallist@^3.0.2, yallist@^3.0.3:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/yallist/-/yallist-3.1.1.tgz#dbb7daf9bfd8bac9ab45ebf602b8cbad0d5d08fd"
 
-yargs-parser@^11.1.1:
-  version "11.1.1"
+yargs-parser@^13.1.2:
+  version "13.1.2"
   resolved "https://registry.yarnpkg.com/yargs-parser/-/yargs-parser-11.1.1.tgz#879a0865973bca9f6bab5cbdf3b1c67ec7d3bcf4"
   dependencies:
     camelcase "^5.0.0"
