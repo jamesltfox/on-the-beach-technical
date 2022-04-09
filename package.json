@@ -16,7 +16,7 @@
     "@svgr/webpack": "^4.3.3",
     "mappy-breakpoints": "^0.2.3",
     "mini-css-extract-plugin": "^0.8.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "normalize-scss": "^7.0.1",
     "react": "^16.10.2",
     "react-datepicker": "^2.9.6",
